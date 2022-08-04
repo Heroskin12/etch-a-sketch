@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#grid_container {
+    max-width: 600px;
+    max-height: 600px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    border: 5px solid yellow;
+}
+
+.square {
+    background: black;
+    
+}
+
+#user_input {
+    max-width: 50px;
+    padding: 2px 5px;
+    text-align: center;
+    font-size: 16px;
+}

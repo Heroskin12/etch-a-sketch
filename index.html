@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Etch-A-Sketch</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>A project by Jamie Furlong.</h3>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Etch-a-Sketch</h1>
+        <p>Draw whatever you want or see how fast you can color the whole grid!</p>
+    </div>
+
+    <section id="user_choice">
+        <p> Please choose a grid size between 2 and 100.</p>
+        <p>Grid Size: 
+            <input id="user_input" type="text"> X <span id="match_size"></span>
+            <button type="Submit" id="user_input_button">Change Grid Size</button>
+        </p>
+    </section>
+    
+    <section id="grid">
+            <div id="grid_container"></div>
+        </div>
+    </section>
+
+    <section id="buttons">
+        <button id="erase" class="button">Erase All</button>
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+</html>
