@@ -129,7 +129,7 @@ window.addEventListener('mouseup', function() {
     draw = false;
 });
 
-document.body.onmousedown = (e) => {
+gridContainer.onmousedown = (e) => {
     draw = true; 
     e.preventDefault();
   };
