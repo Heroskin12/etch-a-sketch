@@ -1,3 +1,40 @@
+:root {
+    --background-color: #fff;
+    --brush-color: #333;
+    --opacity: 1;
+}
+
+/* Utilities */
+.p1 {
+    padding: 1rem 0rem;
+}
+
+.p2 {
+    padding: 2rem 0rem;
+}
+
+.btn-main, .btn-dark, .btn-light {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    padding: 0rem 1rem;
+}
+
+i, input[type="color"], input[type="range"] {
+    cursor: pointer;
+}
+    
+    
 * {
     padding: 0;
     margin: 0;
@@ -6,14 +43,97 @@
 
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: steelblue;
+    color: white;
+    
 }
 
-#grid {
+.container {
+    max-width: 1281px;
+    padding: 0rem 1.5rem;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+/* Header */
+header .container {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+/* Master Grid */
+#master_grid {
+    display: grid;
+    grid-template-columns: 200px 800px;    
+    grid-template-areas: 
+    'options colors colors'
+    'options canvas canvas'
+    'options canvas canvas';
+    gap: 1rem;
+    justify-content: center;
+    margin: auto;
+    height: 800px;
+}
+
+.div_1 {
+    grid-area: options;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 200px;
+    background: teal;
+    
 }
+
+.div_1 ul {
+    flex-direction: column;
+}
+
+.div_1 ul li {
+    padding: 2rem 0;
+}
+
+.div_2 {
+    grid-area: colors;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: teal;
+}
+
+.div_2 ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.opacity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.div_3 {
+    grid-area: canvas;
+    background: tan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_3 p {
+    padding: 0 2rem;
+}
+
+
 
 #grid_container {
     max-width: 600px;
@@ -22,9 +142,10 @@ body {
 }
 
 .square {
-    background: white;
+    background: var(--background-color);
     border: 1px solid #333;  
     cursor: pointer;
+    
 }
 
 #user_input {
@@ -32,4 +153,12 @@ body {
     padding: 2px 5px;
     text-align: center;
     font-size: 16px;
+}
+
+#footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    margin-top: 3rem;
+    padding: 1.5rem;
 }

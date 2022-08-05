@@ -1,7 +1,10 @@
 // Step 1: Set the variables.
 let gridContainer = document.getElementById('grid_container'); // squares will be appended to this.
-let erase = document.getElementById('erase');
+let eraseAll = document.getElementById('eraseAll');
 let draw;
+let brushColor = document.getElementById('brush_color');
+let backgroundColor = document.getElementById('background_color');
+let opacityValue = document.getElementById('myRange');
 
 let userChoice = document.getElementById('user_choice'); // parent of input and error.
 let matchSize = document.getElementById('match_size'); // span text will change with user input.
@@ -27,9 +30,23 @@ inputButton.addEventListener('click', function() {
     matchDim();
 });
 
-erase.addEventListener('click', function() {
-    eraseAll();
+eraseAll.addEventListener('click', function() {
+    clear();
 })
+
+brushColor.addEventListener('input', function() {
+    changeBrushColor();
+})
+
+backgroundColor.addEventListener('input', function() {
+    changeBackgroundColor();
+})
+
+opacityValue.addEventListener('input', function() {
+    changeOpacity();
+})
+
+
 
 // Function handles matching the span text.
 function matchDim() {
@@ -56,11 +73,13 @@ function createGrid() {
 
             square[i].addEventListener('mouseover', function() {
                 if(!draw) return;
-                square[i].style.background = 'red';
+                square[i].style.background = 'var(--brush-color)';
+                square[i].style.opacity = 'var(--opacity)';
             })
 
             square[i].addEventListener('mousedown', function() {
-                square[i].style.background = 'red';
+                square[i].style.background = 'var(--brush-color)';
+                square[i].style.opacity = 'var(--opacity)';
             })
         };
     }
@@ -91,11 +110,13 @@ function createGrid() {
 
             square[i].addEventListener('mouseover', function() {
                 if(!draw) return;
-                square[i].style.background = 'red';
+                square[i].style.background = 'var(--brush-color)';
+                square[i].style.opacity = 'var(--opacity)';
             })
 
             square[i].addEventListener('mousedown', function() {
-                square[i].style.background = 'red';
+                square[i].style.background = 'var(--brush-color)';
+                square[i].style.opacity = 'var(--opacity)';
             })
         };
 }};
@@ -111,11 +132,11 @@ function deleteGrid() {
 };
 
 // Function to erase all squares.
-function eraseAll() {
+function clear() {
     let squares = gridContainer.querySelectorAll('.square');
     let i = 0;
     squares.forEach(function() {
-        square[i].style.background = "#fff";
+        square[i].style.background = "var(--background-color)";
         i++;
     });   
 };
@@ -133,3 +154,19 @@ gridContainer.onmousedown = (e) => {
     draw = true; 
     e.preventDefault();
   };
+
+  // Function to change brush and background colors.
+  function changeBrushColor() {
+    let body = document.body;
+    body.style.setProperty('--brush-color', `${brushColor.value}`);
+  }
+
+  function changeBackgroundColor() {
+    let body = document.body;
+    body.style.setProperty('--background-color', `${backgroundColor.value}`);
+  }
+
+  function changeOpacity() {
+    let body = document.body;
+    body.style.setProperty('--opacity', `${opacityValue.value}`);
+  }

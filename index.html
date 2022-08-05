@@ -8,34 +8,62 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <h3>A project by Jamie Furlong.</h3>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>Etch-a-Sketch</h1>
-        <p>Draw whatever you want or see how fast you can color the whole grid!</p>
-    </div>
-
-    <section id="user_choice">
-        <p> Please choose a grid size between 2 and 100.</p>
-        <p>Grid Size: 
-            <input id="user_input" type="text"> X <span id="match_size"></span>
-            <button type="Submit" id="user_input_button">Change Grid Size</button>
-        </p>
-    </section>
     
-    <section id="grid">
-            <div id="grid_container"></div>
+    <header>
+        <div class="container p2">
+            <h1>Etch-a-Sketch</h1>
+            <p>Draw whatever you want or see how fast you can color the whole grid!</p>
+        </div>
+    </header>
+    
+    <section id="page_layout">
+        <div class="container">
+            <div id="master_grid">
+                <div class="div_1">
+                    <ul>
+                        <li><i class="fa-solid fa-paintbrush fa-3x"></i></li>
+                        <li><i class="fa-solid fa-eraser fa-3x"></i></li>
+                        <li><i id="eraseAll" class=" button fa-solid fa-x fa-3x"></i></i></button></li>
+                        <li><i class="fa-solid fa-hourglass fa-3x"></i></button></li>
+                    </ul>
+                </div>
+                <div class="div_2">
+                    <ul>
+                        <li>Brush Color: <input id="brush_color" type="color"></li>
+                        <li>Background Color: <input id="background_color" type="color" value="#ffffff"></li>
+                        <li class="opacity"><p>Opacity:</p><input type="range" min="0" max="100" value="1" class="slider" id="myRange"></li>
+                        <li>
+                            <section id="user_choice">
+                                <p> Please choose a grid size between 2 and 100.</p>
+                                <p>Grid Size: 
+                                    <input id="user_input" type="text"> X <span id="match_size"></span>
+                                    <button type="Submit" id="user_input_button">Change Grid Size</button>
+                                </p>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+                <div class="div_3">
+                    <section id="grid" class="p2">
+                        <div id="grid_container"></div>
+                    </section>
+                </div>    
+            </div>
         </div>
     </section>
 
-    <section id="buttons">
-        <button id="erase" class="button">Erase All</button>
-    </section>
+    </div>
+   
+    
+   
+
+    
+
+    <div id="footer">
+        <p>Website by Jamie Furlong</p>
+    </div>
 
     <script src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/5ed879b221.js" crossorigin="anonymous"></script>
 </body>
 </html>
