@@ -11,6 +11,28 @@ let error;
 let eraseAllBtn = document.getElementById('eraseAll');
 let draw;
 let backgroundColor = document.getElementById('background_color');
+let brushColor = document.getElementById('brush_color');
+let drawIcon = document.getElementById('draw_icon');
+let eraseIcon = document.getElementById('erase_icon')
+
+
+drawIcon.addEventListener('click', function() {
+    drawIcon.style.color = 'orange';
+    eraseIcon.style.color = '#fff';
+    eraseAllBtn.style.color = "#fff";
+});
+
+eraseIcon .addEventListener('click', function() {
+    eraseIcon.style.color = 'orange';
+    drawIcon.style.color = "#fff";
+    eraseAllBtn.style.color = "#fff";
+});
+
+eraseAllBtn.addEventListener('click', function() {
+    eraseAllBtn.style.color = 'orange';
+    drawIcon.style.color = "#fff";
+    eraseIcon.style.color = "#fff";
+});
 
 // Call drawGrid function to initialise default 16x16 grid.
 drawGrid(16);
@@ -30,6 +52,8 @@ eraseAllBtn.addEventListener('click', function() {
 window.addEventListener('mousedown', function() {
     draw = true;
 });
+
+
 
 window.addEventListener('mouseup', function() {
     draw = false;
@@ -83,17 +107,17 @@ function drawGrid(size) {
             grid.appendChild(square);        
 
             // Add Drawing Event Listeners
+
             square.addEventListener('mouseover', function() {
                 if (draw === true) {
-                    square.style.background = 'var(--brush-color)';
+                    square.style.background = brushColor.value;
                 }
             });
 
-            square.addEventListener('mousedown', function() {
-                if (draw === true) {
-                    square.style.background = 'var(--brush-color)';
-                }
+            square.addEventListener('mousedown', function() {                
+                    square.style.background = brushColor.value;
             });
+
         }
     }
     else {
