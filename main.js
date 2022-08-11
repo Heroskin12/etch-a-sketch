@@ -5,6 +5,7 @@
 let newSize = document.getElementById('user_input');
 let sizeButton = document.getElementById('user_input_button');
 let grid = document.getElementById('grid_container');
+let userInput = document.getElementById('user_input');
 let size;
 let sizePar = document.getElementById('user_choice');
 let error;
@@ -79,6 +80,7 @@ challengeBtn.addEventListener('click', function() {
         paintClick = false;
         sideBarBtn.disabled = true;
         challengeButton.disabled = false;
+        userInput.disabled = true;
     }
     else {
         challenge = false;
@@ -90,7 +92,8 @@ challengeBtn.addEventListener('click', function() {
         tenths.innerText = tens;
         seconds.innerText = secs + " " + ":";
         minutes.innerText = mins + " " + ":";
-        challengeButton.disabled = false;        
+        challengeButton.disabled = false; 
+        userInput.disabled = false;       
     };
 });
 
@@ -198,7 +201,7 @@ start.addEventListener('click', function() {
 stop.addEventListener('click', function() {
     clearInterval(interval);
     paintClick = false;
-    sideBarBtn.disabled = false;
+    sideBarBtn.disabled = true;
 })
 
 reset.addEventListener('click', function() {
