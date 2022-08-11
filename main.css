@@ -5,6 +5,10 @@
 }
 
 /* Utilities */
+.icon_highlight {
+    color: orange;
+}
+
 .p1 {
     padding: 1rem 0rem;
 }
@@ -89,6 +93,12 @@ header .container {
     
 }
 
+.sideBarBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+}
 .div_1 ul {
     flex-direction: column;
 }
@@ -123,7 +133,7 @@ header .container {
 
 .div_3 {
     grid-area: canvas;
-    background: tan;
+    background: grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,6 +163,39 @@ header .container {
     padding: 2px 5px;
     text-align: center;
     font-size: 16px;
+}
+
+#watch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
+
+#watch .timer {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#watch ul li button {
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    transition: color 1s;
+    background: none;
+}
+
+#watch ul li button:hover {
+    color: orange;
+}
+
+.off {
+    display: none !important;
 }
 
 #footer {

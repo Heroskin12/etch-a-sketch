@@ -20,18 +20,20 @@
         <div class="container">
             <div id="master_grid">
                 <div class="div_1">
-                    <ul>
-                        <li><i id ="draw_icon" class="fa-solid fa-paintbrush fa-3x"></i></li>
-                        <li id = "erase_icon"><i class="fa-solid fa-eraser fa-3x"></i></li>
-                        <li><i id="eraseAll" class=" button fa-solid fa-x fa-3x"></i></i></button></li>
-                        <li><i class="fa-solid fa-hourglass fa-3x"></i></button></li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li><button class="sideBarBtn"><i id ="draw_icon" class="fa-solid fa-paintbrush fa-3x"></i></button></li>
+                            <li><button class="sideBarBtn"><i id = "erase_icon" class="fa-solid fa-eraser fa-3x"></i></button></li>
+                            <li><button class="sideBarBtn"><i id="eraseAll" class=" button fa-solid fa-x fa-3x"></i></button></li>
+                            <li><button class="sideBarBtn challengeButton"><i id="challengeBtn" class="fa-solid fa-hourglass fa-3x"></i></button></li>
+                        </ul>
+                    </div>                        
                 </div>
                 <div class="div_2">
                     <ul>
                         <li>Brush Color: <input id="brush_color" type="color"></li>
                         <li>Background Color: <input id="background_color" type="color" value="#ffffff"></li>
-                        <li class="opacity"><p>Opacity:</p><input type="range" min="0" max="100" value="1" class="slider" id="myRange"></li>
+                        <li class="opacity"><p>Opacity:</p><input type="range" min="0" max="100" value="100" class="slider" id="myRange"></li>
                         <li>
                             <section id="user_choice">
                                 <p> Please choose a grid size between 2 and 100.</p>
@@ -45,6 +47,22 @@
                 </div>
                 <div class="div_3">
                     <section id="grid" class="p2">
+                        <div id="watch" class="off">
+                            <div class="timer">
+                                <h3>Fill in the 30 x 30 grid as fast as you can!</h3>
+                                <h4><em>Press play to begin and pause when you are finished.</em></h4>
+                                <p>
+                                    <span id="minutes">00 :</span>
+                                    <span id="seconds"> 00 :</span>
+                                    <span id="tenths"> 00</span>
+                                </p>
+                            </div>
+                            <ul>
+                                <li><button id ="start"><i class="fa-solid fa-play fa-2x"></i></button></li>
+                                <li><button id="stop"><i class="fa-solid fa-pause fa-2x"></i></button></li>
+                                <li><button id="reset"><i class="fa-solid fa-rotate-right fa-2x"></i></button></li>
+                            </ul>
+                        </div>
                         <div id="grid_container"></div>
                     </section>
                 </div>    
